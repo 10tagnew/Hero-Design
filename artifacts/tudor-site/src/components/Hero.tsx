@@ -76,7 +76,8 @@ export function Hero() {
             className="font-black uppercase leading-none mb-6"
             style={{ fontSize: 72, lineHeight: 0.95, letterSpacing: "-0.01em" }}
           >
-            <span className="block text-white">OUTRECRUIT</span>
+            <span className="block text-white">OUT</span>
+            <span className="block text-white">RECRUIT</span>
             <span className="block" style={{ color: "#e07b2a" }}>EVERYBODY</span>
           </h1>
 
