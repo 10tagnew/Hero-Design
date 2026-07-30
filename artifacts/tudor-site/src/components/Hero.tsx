@@ -152,7 +152,16 @@ export function Hero() {
           loop
           muted
           playsInline
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "84%",
+            height: "84%",
+            objectFit: "cover",
+            borderRadius: 28,
+          }}
         >
           <source src="/images/hero-demo.mp4" type="video/mp4" />
         </video>
