@@ -76,9 +76,8 @@ export function Hero() {
             className="font-black uppercase leading-none mb-6"
             style={{ fontSize: 72, lineHeight: 0.95, letterSpacing: "-0.01em" }}
           >
-            <span className="block text-white">DOMINATE YOUR</span>
-            <span className="block text-white">RECRUITING</span>
-            <span className="block" style={{ color: "#e07b2a" }}>COMPETITION</span>
+            <span className="block text-white">OUTRECRUIT</span>
+            <span className="block" style={{ color: "#e07b2a" }}>EVERYBODY</span>
           </h1>
 
           {/* Subtext */}
