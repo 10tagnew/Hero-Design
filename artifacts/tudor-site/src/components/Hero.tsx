@@ -23,22 +23,6 @@ export function Hero() {
           }}
         />
 
-        {/* Coaches image — right side */}
-        <img
-          src="/images/coaches.png"
-          alt="College coaches celebrating"
-          className="absolute right-0 bottom-0 h-full object-contain object-bottom pointer-events-none"
-          style={{ maxHeight: "100%", zIndex: 1 }}
-        />
-        {/* Gradient fade on left edge of image */}
-        <div
-          className="absolute inset-y-0 right-0 w-1/2 pointer-events-none"
-          style={{
-            background: "linear-gradient(to right, #1a2744 0%, transparent 40%)",
-            zIndex: 2,
-          }}
-        />
-
         {/* Navbar */}
         <nav
           className="relative z-10 flex items-center justify-between mx-6 mt-6 md:mx-10 md:mt-8 px-6 py-3 bg-white rounded-full"
