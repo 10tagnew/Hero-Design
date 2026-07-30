@@ -9,7 +9,9 @@ export function Hero() {
         style={{
           minHeight: 700,
           boxShadow: "0 20px 50px rgba(15, 23, 42, 0.25)",
-          background: "linear-gradient(135deg, #101a30 0%, #1a2744 45%, #24334f 100%)",
+          backgroundImage: "url('/images/hero-bg.avif')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
         }}
       >
         {/* Darkening overlay */}
