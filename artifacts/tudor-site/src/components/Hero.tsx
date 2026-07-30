@@ -92,8 +92,7 @@ export function Hero() {
             className="leading-relaxed mb-10"
             style={{ color: "#d3dae8", fontSize: 17, maxWidth: 460, lineHeight: 1.65 }}
           >
-            The proven system, weekly coaching, and recruiting messaging that helps college coaches
-            land the athletes they want — before the other school calls.
+            Coaches work with us for one reason: land their dream draft classes year after year. It's possible through our coaching, our recruit messaging, and our recruiting websites.
           </p>
 
           {/* CTA buttons */}
