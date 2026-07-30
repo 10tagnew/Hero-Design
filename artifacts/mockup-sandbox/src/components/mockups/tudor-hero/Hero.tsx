@@ -1,9 +1,11 @@
+const NAV_LINKS = ["Coaching", "The Newsletter", "Articles", "Membership"];
+
 export function Hero() {
   return (
     <div className="w-full font-sans" style={{ fontFamily: "'Inter', 'Arial', sans-serif" }}>
       {/* Navbar */}
       <nav
-        className="flex items-center justify-between px-6 py-3 bg-white border-b border-gray-200"
+        className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-200"
         style={{ minHeight: 64 }}
       >
         {/* Logo */}
@@ -42,7 +44,7 @@ export function Hero() {
 
         {/* Nav links */}
         <div className="flex items-center gap-7">
-          {["Coaching", "The Newsletter", "Articles", "Membership", "About Dan"].map((item) => (
+          {NAV_LINKS.map((item) => (
             <a
               key={item}
               href="#"
@@ -55,7 +57,7 @@ export function Hero() {
         </div>
 
         {/* CTA buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <a
             href="#"
             className="text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
@@ -65,47 +67,60 @@ export function Hero() {
           </a>
           <a
             href="#"
-            className="px-5 py-2 rounded font-bold text-white text-sm uppercase tracking-wide transition-colors"
-            style={{ backgroundColor: "#e07b2a", fontSize: 13, letterSpacing: "0.05em" }}
+            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full font-bold text-white text-sm transition-colors hover:opacity-90"
+            style={{ backgroundColor: "#e07b2a", fontSize: 13 }}
           >
-            JOIN FREE
+            Join Free <span aria-hidden="true">&raquo;</span>
           </a>
         </div>
       </nav>
 
       {/* Hero */}
       <div
-        className="relative w-full overflow-hidden flex items-stretch"
-        style={{ backgroundColor: "#1a2744", minHeight: 520 }}
+        className="relative w-full overflow-hidden flex items-center"
+        style={{
+          minHeight: 640,
+          // TODO: swap in the requested Unsplash photo (unsplash.com/photos/man-on-running-field-9HI8UJMSdZA)
+          // once the file is available locally — outbound fetches to unsplash.com are blocked in this
+          // environment. Placeholder gradient stands in for the full-bleed background photo for now.
+          background:
+            "linear-gradient(135deg, #101a30 0%, #1a2744 45%, #24334f 100%)",
+        }}
       >
-        {/* Left content */}
+        {/* Darkening overlay for text legibility over the photo */}
         <div
-          className="flex flex-col justify-center z-10 pl-12 pr-8 py-14"
-          style={{ maxWidth: 560, flex: "0 0 auto" }}
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(10,16,30,0.88) 0%, rgba(10,16,30,0.6) 45%, rgba(10,16,30,0.25) 75%, rgba(10,16,30,0.15) 100%)",
+          }}
+        />
+
+        {/* Content */}
+        <div
+          className="relative z-10 flex flex-col justify-center px-12 py-20"
+          style={{ maxWidth: 680 }}
         >
           {/* Eyebrow */}
           <p
-            className="font-bold uppercase tracking-widest mb-4"
+            className="font-bold uppercase tracking-widest mb-5"
             style={{ color: "#e07b2a", fontSize: 13, letterSpacing: "0.2em" }}
           >
-            FOR COLLEGE COACHES
+            For College Coaches
           </p>
 
           {/* Headline */}
           <h1
-            className="font-black uppercase leading-none mb-4"
+            className="font-black uppercase leading-none mb-6"
             style={{
-              fontSize: 68,
+              fontSize: 72,
               lineHeight: 0.95,
               letterSpacing: "-0.01em",
             }}
           >
             <span className="block text-white">DOMINATE YOUR</span>
             <span className="block text-white">RECRUITING</span>
-            <span
-              className="block"
-              style={{ color: "#e07b2a" }}
-            >
+            <span className="block" style={{ color: "#e07b2a" }}>
               COMPETITION
             </span>
           </h1>
@@ -113,56 +128,29 @@ export function Hero() {
           {/* Subtext */}
           <p
             className="leading-relaxed mb-10"
-            style={{ color: "#b0bdd4", fontSize: 16, maxWidth: 380, lineHeight: 1.65 }}
+            style={{ color: "#d3dae8", fontSize: 17, maxWidth: 460, lineHeight: 1.65 }}
           >
-            The proven system, weekly coaching, and recruiting messaging that helps college coaches land the
-            athletes they want — before the other school calls.
+            The proven system, weekly coaching, and recruiting messaging that helps college coaches
+            land the athletes they want — before the other school calls.
           </p>
 
           {/* CTA buttons */}
           <div className="flex items-center gap-4 flex-wrap">
             <a
               href="#"
-              className="px-7 py-4 font-black text-white uppercase tracking-widest text-sm rounded transition-opacity hover:opacity-90"
-              style={{
-                backgroundColor: "#e07b2a",
-                fontSize: 13,
-                letterSpacing: "0.12em",
-              }}
+              className="flex items-center gap-2 px-7 py-4 font-bold text-white text-sm rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "#e07b2a", fontSize: 14 }}
             >
-              WHY THIS WORKS
+              Why This Works <span aria-hidden="true">&raquo;</span>
             </a>
             <a
               href="#"
-              className="px-7 py-4 font-black text-white uppercase tracking-widest text-sm rounded border-2 border-white transition-all hover:bg-white hover:text-gray-900"
-              style={{
-                fontSize: 13,
-                letterSpacing: "0.12em",
-              }}
+              className="flex items-center gap-2 px-7 py-4 font-bold text-white text-sm rounded-full border-2 border-white transition-all hover:bg-white hover:text-gray-900"
+              style={{ fontSize: 14 }}
             >
-              RECRUITING WEBSITES
+              Recruiting Websites <span aria-hidden="true">&raquo;</span>
             </a>
           </div>
-        </div>
-
-        {/* Coaches image – right side */}
-        <div
-          className="flex-1 relative flex items-end justify-center"
-          style={{ minHeight: 520 }}
-        >
-          <img
-            src="/__mockup/images/coaches.png"
-            alt="College coaches celebrating"
-            className="absolute bottom-0 right-0 h-full object-contain object-bottom"
-            style={{ maxHeight: 520, right: 0 }}
-          />
-          {/* Subtle gradient fade on left edge of image area */}
-          <div
-            className="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"
-            style={{
-              background: "linear-gradient(to right, #1a2744 0%, transparent 100%)",
-            }}
-          />
         </div>
       </div>
     </div>
