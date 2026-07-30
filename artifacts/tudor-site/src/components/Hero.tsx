@@ -115,66 +115,68 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Phone frame — bottom-right, bleeds into next section */}
+      {/* CTA card — bottom-right, bleeds into next section */}
       <div
         style={{
           position: "absolute",
           right: 56,
           bottom: 0,
-          width: 248,
-          height: 520,
-          borderRadius: 44,
-          border: "4px solid #e07b2a",
-          backgroundColor: "#0a101e",
+          width: 300,
+          borderRadius: 20,
           overflow: "hidden",
-          boxShadow:
-            "0 0 0 8px rgba(224,123,42,0.12), 0 24px 64px rgba(0,0,0,0.55)",
+          boxShadow: "0 24px 64px rgba(0,0,0,0.45)",
           zIndex: 30,
         }}
       >
-        {/* Top notch */}
+        {/* Orange header */}
         <div
           style={{
-            position: "absolute",
-            top: 12,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 72,
-            height: 22,
-            borderRadius: 99,
-            backgroundColor: "#0a101e",
-            zIndex: 10,
+            backgroundColor: "#e07b2a",
+            padding: "18px 20px 14px",
           }}
-        />
-        {/* Screen image */}
-        <img
-          src="/images/phone-screen.png"
-          alt="Recruiting website preview"
+        >
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 700,
+              fontSize: 11,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.75)",
+              marginBottom: 4,
+            }}
+          >
+            Recruiting Websites
+          </p>
+          <p
+            style={{
+              fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
+              fontWeight: 400,
+              fontSize: 28,
+              lineHeight: 1,
+              color: "#fff",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Sites That Demand Attention
+          </p>
+        </div>
+        {/* Demo video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           style={{
-            position: "absolute",
-            top: 0,
-            left: "50%",
-            transform: "translateX(-50%)",
+            display: "block",
             width: "100%",
-            height: "100%",
-            objectFit: "contain",
+            height: 260,
+            objectFit: "cover",
             objectPosition: "top center",
           }}
-        />
-        {/* Home indicator */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 10,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 80,
-            height: 5,
-            borderRadius: 99,
-            backgroundColor: "rgba(255,255,255,0.35)",
-            zIndex: 10,
-          }}
-        />
+        >
+          <source src="/images/hero-demo.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   );
