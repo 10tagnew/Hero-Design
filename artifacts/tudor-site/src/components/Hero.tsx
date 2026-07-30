@@ -68,13 +68,19 @@ export function Hero() {
 
         {/* Hero content */}
         <div
-          className="relative flex flex-col justify-center px-12 py-20"
-          style={{ maxWidth: 680, zIndex: 10 }}
+          className="relative flex flex-col justify-end px-10 pb-16 pt-0"
+          style={{ maxWidth: 760, zIndex: 10, marginTop: "auto" }}
         >
           {/* Headline */}
           <h1
-            className="font-black uppercase leading-none mb-6"
-            style={{ fontSize: 72, lineHeight: 0.95, letterSpacing: "-0.01em" }}
+            className="uppercase mb-6"
+            style={{
+              fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
+              fontSize: "clamp(90px, 14vw, 160px)",
+              lineHeight: 0.87,
+              letterSpacing: "0.01em",
+              fontWeight: 400,
+            }}
           >
             <span className="block text-white">OUT</span>
             <span className="block text-white">RECRUIT</span>
