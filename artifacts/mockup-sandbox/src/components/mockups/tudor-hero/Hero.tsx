@@ -32,37 +32,12 @@ export function Hero() {
           style={{ minHeight: 64, boxShadow: "0 8px 24px rgba(15, 23, 42, 0.18)" }}
         >
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="flex flex-col leading-none">
-              <span
-                className="font-black tracking-widest uppercase"
-                style={{ fontSize: 20, color: "#1a2744", letterSpacing: "0.18em" }}
-              >
-                TUDOR
-              </span>
-              <span
-                className="font-semibold uppercase tracking-widest"
-                style={{ fontSize: 7, color: "#1a2744", letterSpacing: "0.22em" }}
-              >
-                COLLEGIATE STRATEGIES
-              </span>
-            </div>
-            {/* Divider + TCS badge */}
-            <div className="flex items-center gap-2 ml-1">
-              <div className="w-px bg-gray-300 self-stretch" style={{ height: 36 }} />
-              <div className="flex flex-col items-center">
-                <span
-                  className="font-black italic"
-                  style={{ fontSize: 18, color: "#1a2744", lineHeight: 1 }}
-                >
-                  TCS
-                </span>
-                {/* Small decorative arrow/chevron */}
-                <svg width="18" height="9" viewBox="0 0 20 10" fill="none">
-                  <path d="M10 0 L20 10 H0 Z" fill="#e07b2a" />
-                </svg>
-              </div>
-            </div>
+          <div className="flex items-center">
+            <img
+              src="/__mockup/images/tudor-logo.jpeg"
+              alt="Tudor Collegiate Strategies"
+              style={{ height: 44, width: "auto" }}
+            />
           </div>
 
           {/* Nav links */}
