@@ -2,7 +2,7 @@ const NAV_LINKS = ["Coaching", "The Newsletter", "Articles", "Membership"];
 
 export function Hero() {
   return (
-    <div className="w-full font-sans p-4 md:p-6" style={{ fontFamily: "'Inter', 'Arial', sans-serif", backgroundColor: "#e7ebf1" }}>
+    <div className="w-full font-sans p-4 md:p-6 relative" style={{ fontFamily: "'Inter', 'Arial', sans-serif", backgroundColor: "#e7ebf1", paddingBottom: "200px" }}>
       {/* Hero card */}
       <div
         className="relative w-full overflow-hidden rounded-[28px] border-[6px] border-white flex flex-col"
@@ -113,6 +113,63 @@ export function Hero() {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Phone frame — bottom-right, bleeds into next section */}
+      <div
+        style={{
+          position: "absolute",
+          right: 56,
+          bottom: 0,
+          width: 248,
+          height: 520,
+          borderRadius: 44,
+          border: "4px solid #e07b2a",
+          backgroundColor: "#0a101e",
+          overflow: "hidden",
+          boxShadow:
+            "0 0 0 8px rgba(224,123,42,0.12), 0 24px 64px rgba(0,0,0,0.55)",
+          zIndex: 30,
+        }}
+      >
+        {/* Top notch */}
+        <div
+          style={{
+            position: "absolute",
+            top: 12,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 72,
+            height: 22,
+            borderRadius: 99,
+            backgroundColor: "#0a101e",
+            zIndex: 10,
+          }}
+        />
+        {/* Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        >
+          <source src="/images/hero-demo.mp4" type="video/mp4" />
+        </video>
+        {/* Home indicator */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 10,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 80,
+            height: 5,
+            borderRadius: 99,
+            backgroundColor: "rgba(255,255,255,0.35)",
+            zIndex: 10,
+          }}
+        />
       </div>
     </div>
   );
