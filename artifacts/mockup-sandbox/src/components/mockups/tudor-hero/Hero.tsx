@@ -103,14 +103,6 @@ export function Hero() {
           className="relative z-10 flex flex-col justify-center flex-1 px-8 md:px-14 py-14"
           style={{ maxWidth: 680 }}
         >
-          {/* Eyebrow */}
-          <p
-            className="font-bold uppercase tracking-widest mb-5"
-            style={{ color: "#e07b2a", fontSize: 13, letterSpacing: "0.2em" }}
-          >
-            For College Coaches
-          </p>
-
           {/* Headline */}
           <h1
             className="font-black uppercase leading-none mb-6"
