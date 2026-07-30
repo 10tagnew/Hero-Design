@@ -8,12 +8,20 @@ const queryClient = new QueryClient();
 
 import { Hero } from '@/components/Hero';
 import { Features } from '@/components/Features';
+import { Highlights } from '@/components/Highlights';
+import { QuickLinks } from '@/components/QuickLinks';
+import { Newsletter } from '@/components/Newsletter';
+import { Footer } from '@/components/Footer';
 
 function Home() {
   return (
     <>
       <Hero />
       <Features />
+      <Highlights />
+      <QuickLinks />
+      <Newsletter />
+      <Footer />
     </>
   );
 }
