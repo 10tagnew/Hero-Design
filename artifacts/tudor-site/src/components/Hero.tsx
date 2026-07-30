@@ -146,12 +146,10 @@ export function Hero() {
             zIndex: 10,
           }}
         />
-        {/* Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Screen image */}
+        <img
+          src="/images/phone-screen.png"
+          alt="Recruiting website preview"
           style={{
             position: "absolute",
             top: "50%",
@@ -162,9 +160,7 @@ export function Hero() {
             objectFit: "cover",
             borderRadius: 28,
           }}
-        >
-          <source src="/images/hero-demo.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Home indicator */}
         <div
           style={{
