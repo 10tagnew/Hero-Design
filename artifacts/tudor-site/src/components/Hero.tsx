@@ -152,12 +152,13 @@ export function Hero() {
           alt="Recruiting website preview"
           style={{
             position: "absolute",
-            top: "50%",
+            top: 0,
             left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "84%",
-            height: "84%",
-            objectFit: "cover",
+            transform: "translateX(-50%)",
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            objectPosition: "top center",
           }}
         />
         {/* Home indicator */}
