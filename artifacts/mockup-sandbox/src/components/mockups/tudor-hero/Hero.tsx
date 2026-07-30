@@ -2,89 +2,19 @@ const NAV_LINKS = ["Coaching", "The Newsletter", "Articles", "Membership"];
 
 export function Hero() {
   return (
-    <div className="w-full font-sans" style={{ fontFamily: "'Inter', 'Arial', sans-serif" }}>
-      {/* Navbar */}
-      <nav
-        className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-200"
-        style={{ minHeight: 64 }}
-      >
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="flex flex-col leading-none">
-            <span
-              className="font-black tracking-widest uppercase"
-              style={{ fontSize: 22, color: "#1a2744", letterSpacing: "0.18em" }}
-            >
-              TUDOR
-            </span>
-            <span
-              className="font-semibold uppercase tracking-widest"
-              style={{ fontSize: 8, color: "#1a2744", letterSpacing: "0.22em" }}
-            >
-              COLLEGIATE STRATEGIES
-            </span>
-          </div>
-          {/* Divider + TCS badge */}
-          <div className="flex items-center gap-2 ml-1">
-            <div className="w-px bg-gray-300 self-stretch" style={{ height: 40 }} />
-            <div className="flex flex-col items-center">
-              <span
-                className="font-black italic"
-                style={{ fontSize: 20, color: "#1a2744", lineHeight: 1 }}
-              >
-                TCS
-              </span>
-              {/* Small decorative arrow/chevron */}
-              <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
-                <path d="M10 0 L20 10 H0 Z" fill="#e07b2a" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Nav links */}
-        <div className="flex items-center gap-7">
-          {NAV_LINKS.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
-              style={{ fontSize: 14 }}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-        {/* CTA buttons */}
-        <div className="flex items-center gap-4">
-          <a
-            href="#"
-            className="text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
-            style={{ fontSize: 14 }}
-          >
-            Log In
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-1.5 px-5 py-2.5 rounded-full font-bold text-white text-sm transition-colors hover:opacity-90"
-            style={{ backgroundColor: "#e07b2a", fontSize: 13 }}
-          >
-            Join Free <span aria-hidden="true">&raquo;</span>
-          </a>
-        </div>
-      </nav>
-
-      {/* Hero */}
+    <div
+      className="w-full font-sans p-4 md:p-6"
+      style={{ fontFamily: "'Inter', 'Arial', sans-serif", backgroundColor: "#e7ebf1" }}
+    >
+      {/* Hero card: nav floats over the full-bleed photo, framed with a white border */}
       <div
-        className="relative w-full overflow-hidden flex items-center"
+        className="relative w-full overflow-hidden rounded-[28px] border-[6px] border-white flex flex-col"
         style={{
-          minHeight: 640,
-          // TODO: swap in the requested Unsplash photo (unsplash.com/photos/man-on-running-field-9HI8UJMSdZA)
-          // once the file is available locally — outbound fetches to unsplash.com are blocked in this
-          // environment. Placeholder gradient stands in for the full-bleed background photo for now.
-          background:
-            "linear-gradient(135deg, #101a30 0%, #1a2744 45%, #24334f 100%)",
+          minHeight: 700,
+          boxShadow: "0 20px 50px rgba(15, 23, 42, 0.25)",
+          backgroundImage: "url(/__mockup/images/hero-bg.avif)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
         }}
       >
         {/* Darkening overlay for text legibility over the photo */}
@@ -92,13 +22,85 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(10,16,30,0.88) 0%, rgba(10,16,30,0.6) 45%, rgba(10,16,30,0.25) 75%, rgba(10,16,30,0.15) 100%)",
+              "linear-gradient(180deg, rgba(10,16,30,0.15) 0%, rgba(10,16,30,0.25) 22%, rgba(10,16,30,0.55) 60%, rgba(10,16,30,0.8) 100%)",
           }}
         />
 
+        {/* Navbar — floats with margin from the top edge, photo visible behind/around it */}
+        <nav
+          className="relative z-10 flex items-center justify-between mx-6 mt-6 md:mx-10 md:mt-8 px-6 py-3 bg-white rounded-full"
+          style={{ minHeight: 64, boxShadow: "0 8px 24px rgba(15, 23, 42, 0.18)" }}
+        >
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <div className="flex flex-col leading-none">
+              <span
+                className="font-black tracking-widest uppercase"
+                style={{ fontSize: 20, color: "#1a2744", letterSpacing: "0.18em" }}
+              >
+                TUDOR
+              </span>
+              <span
+                className="font-semibold uppercase tracking-widest"
+                style={{ fontSize: 7, color: "#1a2744", letterSpacing: "0.22em" }}
+              >
+                COLLEGIATE STRATEGIES
+              </span>
+            </div>
+            {/* Divider + TCS badge */}
+            <div className="flex items-center gap-2 ml-1">
+              <div className="w-px bg-gray-300 self-stretch" style={{ height: 36 }} />
+              <div className="flex flex-col items-center">
+                <span
+                  className="font-black italic"
+                  style={{ fontSize: 18, color: "#1a2744", lineHeight: 1 }}
+                >
+                  TCS
+                </span>
+                {/* Small decorative arrow/chevron */}
+                <svg width="18" height="9" viewBox="0 0 20 10" fill="none">
+                  <path d="M10 0 L20 10 H0 Z" fill="#e07b2a" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Nav links */}
+          <div className="hidden md:flex items-center gap-7">
+            {NAV_LINKS.map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
+                style={{ fontSize: 14 }}
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#"
+              className="text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
+              style={{ fontSize: 14 }}
+            >
+              Log In
+            </a>
+            <a
+              href="#"
+              className="flex items-center gap-1.5 px-5 py-2.5 rounded-full font-bold text-white text-sm transition-colors hover:opacity-90"
+              style={{ backgroundColor: "#e07b2a", fontSize: 13 }}
+            >
+              Join Free <span aria-hidden="true">&raquo;</span>
+            </a>
+          </div>
+        </nav>
+
         {/* Content */}
         <div
-          className="relative z-10 flex flex-col justify-center px-12 py-20"
+          className="relative z-10 flex flex-col justify-center flex-1 px-8 md:px-14 py-14"
           style={{ maxWidth: 680 }}
         >
           {/* Eyebrow */}
