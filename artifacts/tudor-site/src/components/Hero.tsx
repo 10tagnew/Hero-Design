@@ -68,8 +68,8 @@ export function Hero() {
 
         {/* Hero content */}
         <div
-          className="relative flex flex-col justify-end px-10 pb-16 pt-0"
-          style={{ maxWidth: 760, zIndex: 10, marginTop: "auto" }}
+          className="relative flex flex-col justify-end px-10"
+          style={{ maxWidth: 760, zIndex: 10, marginTop: "auto", paddingBottom: 54, paddingTop: 48 }}
         >
           {/* Headline */}
           <h1
