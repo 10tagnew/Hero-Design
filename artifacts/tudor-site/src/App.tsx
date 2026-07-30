@@ -7,9 +7,15 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 const queryClient = new QueryClient();
 
 import { Hero } from '@/components/Hero';
+import { Features } from '@/components/Features';
 
 function Home() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <Features />
+    </>
+  );
 }
 
 function Router() {
