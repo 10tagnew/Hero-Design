@@ -158,7 +158,6 @@ export function Hero() {
             width: "84%",
             height: "84%",
             objectFit: "cover",
-            borderRadius: 28,
           }}
         />
         {/* Home indicator */}
