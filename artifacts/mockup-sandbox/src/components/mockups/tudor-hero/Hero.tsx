@@ -36,7 +36,7 @@ export function Hero() {
             <img
               src="/__mockup/images/tudor-logo.jpeg"
               alt="Tudor Collegiate Strategies"
-              style={{ height: 88, width: "auto", marginTop: -12, marginBottom: -12 }}
+              style={{ height: 44, width: "auto" }}
             />
           </div>
 
