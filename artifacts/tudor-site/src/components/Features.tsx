@@ -28,20 +28,19 @@ export function Features() {
     <section
       style={{
         backgroundColor: "#0a101e",
-        marginTop: -120,
-        paddingTop: 160,
+        paddingTop: 72,
         paddingBottom: 80,
         fontFamily: "'Inter', 'Arial', sans-serif",
       }}
     >
-      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 32px" }}>
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
 
         {/* Section headline */}
-        <div className="flex items-start justify-between mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10 lg:mb-12">
           <h2
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-              fontSize: "clamp(72px, 10vw, 130px)",
+              fontSize: "clamp(56px, 10vw, 130px)",
               lineHeight: 0.9,
               color: "#fff",
               fontWeight: 400,
@@ -53,9 +52,9 @@ export function Features() {
           </h2>
 
           <p
+            className="text-sm sm:text-[15px]"
             style={{
               color: "#6b7a9a",
-              fontSize: 15,
               lineHeight: 1.7,
               maxWidth: 340,
               marginTop: 12,
@@ -68,13 +67,7 @@ export function Features() {
         </div>
 
         {/* Feature cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 16,
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {CARDS.map((card, i) =>
             card.kind === "text" ? (
               <div
@@ -157,7 +150,7 @@ export function Features() {
 
         {/* Bottom strip */}
         <div
-          className="flex items-center justify-between mt-14"
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-14"
           style={{
             borderTop: "1px solid rgba(255,255,255,0.08)",
             paddingTop: 32,
