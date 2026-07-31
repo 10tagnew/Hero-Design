@@ -2,8 +2,8 @@ const CARDS = [
   {
     label: "Weekly Coaching",
     headline: "Film sessions.\nGame plans.\nAccountability.",
-    image: "/images/coaches.png",
-    imagePosition: "center 15%",
+    image: "/images/hero-bg-3.avif",
+    imagePosition: "center 30%",
   },
   {
     label: "Recruit Messaging",
@@ -14,8 +14,8 @@ const CARDS = [
   {
     label: "Recruiting Websites",
     headline: "Sites recruits actually\nspend time on.",
-    image: "/images/phone-screen.png",
-    imagePosition: "top",
+    image: "/images/hero-bg-6.avif",
+    imagePosition: "center 30%",
   },
 ];
 
@@ -28,28 +28,19 @@ export function Features() {
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
 
         {/* Section headline */}
-        <div className="mb-12 lg:mb-16">
+        <div className="mb-10 lg:mb-14">
           <h2
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-              fontSize: "clamp(64px, 14vw, 160px)",
-              lineHeight: 0.87,
+              fontSize: "clamp(96px, 22vw, 260px)",
+              lineHeight: 0.82,
               color: "#fff",
               fontWeight: 400,
-              letterSpacing: "0.01em",
+              letterSpacing: "-0.01em",
             }}
           >
             NEXT<br />LEVEL.
           </h2>
-
-          <p
-            className="text-sm sm:text-[15px] mt-6"
-            style={{ color: "#7a8399", lineHeight: 1.7, maxWidth: 440 }}
-          >
-            Every coach who outrecruits their competition is pulling the same
-            three levers. We've turned each one into a system you plug into
-            starting week one.
-          </p>
         </div>
 
         {/* Feature cards */}
