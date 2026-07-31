@@ -44,13 +44,13 @@ export function Hero() {
           }}
         />
       ))}
-      {/* Darkening overlay — fades to the exact navy of the Features section
+      {/* Darkening overlay — fades to black to match the Features section
           below so the two sections blend with no visible seam. */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,16,30,0.15) 0%, rgba(10,16,30,0.25) 22%, rgba(10,16,30,0.6) 65%, #0a101e 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 22%, rgba(0,0,0,0.7) 65%, #000 100%)",
         }}
       />
 
@@ -123,7 +123,7 @@ export function Hero() {
             className="leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base"
             style={{ color: "#d3dae8", maxWidth: 460, lineHeight: 1.65 }}
           >
-            Coaches work with us for one reason: land their dream draft classes year after year. It's possible through our coaching, our recruit messaging, and our recruiting websites.
+            Coaches work with us for one reason: land their dream recruiting classes year after year. It's possible through our coaching, our recruit messaging, and our recruiting websites.
           </p>
 
           {/* CTA buttons */}
@@ -190,6 +190,32 @@ export function Hero() {
         >
           <source src="/images/hero-demo.mp4" type="video/mp4" />
         </video>
+
+        {/* CTA */}
+        <a
+          href="#"
+          className="flex items-center justify-between px-5 py-4 transition-colors hover:bg-white/5"
+          style={{ backgroundColor: "#12182a" }}
+        >
+          <span
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 700,
+              fontSize: 13,
+              color: "#fff",
+            }}
+          >
+            See Live Examples
+          </span>
+          <span
+            className="flex items-center justify-center rounded-full shrink-0"
+            style={{ width: 30, height: 30, backgroundColor: "#e07b2a" }}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
   );

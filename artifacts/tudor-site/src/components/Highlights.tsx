@@ -11,17 +11,21 @@ export function Highlights() {
       className="relative w-full overflow-hidden"
       style={{ backgroundColor: "#0d1424", fontFamily: "'Inter', 'Arial', sans-serif" }}
     >
-      {/* Coaches photo bleeding in from the right */}
-      <img
-        src="/images/coaches.png"
-        alt=""
-        aria-hidden="true"
-        className="hidden md:block absolute right-0 bottom-0 h-full object-contain object-bottom pointer-events-none"
-        style={{ maxHeight: 640, opacity: 0.9 }}
+      {/* Background photo */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/images/hero-bg.avif')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
       />
       <div
-        className="absolute inset-y-0 right-0 pointer-events-none"
-        style={{ width: "45%", background: "linear-gradient(to left, rgba(13,20,36,0) 0%, rgba(13,20,36,0.85) 55%, #0d1424 100%)" }}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(13,20,36,0.97) 0%, rgba(13,20,36,0.9) 35%, rgba(13,20,36,0.55) 65%, rgba(13,20,36,0.25) 100%)",
+        }}
       />
 
       <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10 py-20 sm:py-28">
@@ -82,11 +86,33 @@ export function Highlights() {
 
           <a
             href="#"
-            className="inline-block mt-7 text-sm font-semibold"
+            className="inline-block mt-7 mb-5 text-sm font-semibold"
             style={{ color: "#e07b2a" }}
           >
             View all issues →
           </a>
+
+          {/* Newsletter signup CTA */}
+          <form
+            className="flex flex-col sm:flex-row gap-2 pt-5"
+            style={{ borderTop: "1px solid #eceef2" }}
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="email"
+              required
+              placeholder="Your email address"
+              className="flex-1 min-w-0 px-4 py-3 rounded-full text-sm outline-none"
+              style={{ backgroundColor: "#f3f5f9", border: "1px solid #e4e7ee", color: "#1a2744" }}
+            />
+            <button
+              type="submit"
+              className="px-5 py-3 rounded-full font-bold text-white text-sm transition-opacity hover:opacity-90 whitespace-nowrap"
+              style={{ backgroundColor: "#e07b2a" }}
+            >
+              Subscribe »
+            </button>
+          </form>
         </div>
       </div>
     </section>

@@ -2,20 +2,20 @@ const TILES = [
   {
     title: "The Newsletter",
     sub: "Twice-a-month recruiting tactics",
-    kind: "gradient" as const,
-    gradient: "linear-gradient(155deg, #1a2744 0%, #101a30 60%, #0a101e 100%)",
+    image: "/images/hero-bg.avif",
+    imagePosition: "center 10%",
   },
   {
     title: "Recruiting Websites",
     sub: "See a live example",
-    kind: "image" as const,
-    image: "/images/phone-screen.png",
+    image: "/images/hero-bg.avif",
+    imagePosition: "center 60%",
   },
   {
     title: "Membership",
     sub: "Join the coach community",
-    kind: "gradient" as const,
-    gradient: "linear-gradient(155deg, #3a2416 0%, #241408 60%, #0a101e 100%)",
+    image: "/images/coaches.png",
+    imagePosition: "center 15%",
   },
 ];
 
@@ -28,15 +28,14 @@ export function QuickLinks() {
             <div key={tile.title} className="flex flex-col">
               <div
                 className="w-full rounded-2xl overflow-hidden mb-4"
-                style={{ aspectRatio: "4 / 3", ...(tile.kind === "gradient" ? { background: tile.gradient } : {}) }}
+                style={{ aspectRatio: "4 / 3", backgroundColor: "#0a101e" }}
               >
-                {tile.kind === "image" && (
-                  <img
-                    src={tile.image}
-                    alt={tile.title}
-                    className="w-full h-full object-cover object-top"
-                  />
-                )}
+                <img
+                  src={tile.image}
+                  alt={tile.title}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: tile.imagePosition }}
+                />
               </div>
               <p style={{ fontSize: 15, fontWeight: 700, color: "#1a2744" }}>{tile.title}</p>
               <p className="mb-2" style={{ fontSize: 13, color: "#6b7280" }}>{tile.sub}</p>
