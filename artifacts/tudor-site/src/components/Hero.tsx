@@ -3,7 +3,7 @@ const NAV_LINKS = ["Coaching", "The Newsletter", "Articles", "Membership"];
 export function Hero() {
   return (
     <section
-      className="relative w-full flex flex-col overflow-hidden"
+      className="relative w-full flex flex-col"
       style={{
         fontFamily: "'Inter', 'Arial', sans-serif",
         minHeight: "100svh",
@@ -68,8 +68,8 @@ export function Hero() {
       </nav>
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col lg:flex-row lg:items-end justify-end lg:justify-between gap-10 px-5 sm:px-8 md:px-10 pt-10 pb-10 sm:pb-14">
-        <div className="max-w-[760px]">
+      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[360px] xl:pr-[400px] pt-10 pb-14 sm:pb-16">
+        <div className="max-w-[720px]">
           {/* Headline */}
           <h1
             className="uppercase mb-5 sm:mb-6"
@@ -111,50 +111,53 @@ export function Hero() {
             </a>
           </div>
         </div>
+      </div>
 
-        {/* Recruiting websites preview card — inline below the CTAs on mobile,
-            pinned to the bottom-right corner of the hero on large screens. */}
-        <div
-          className="w-full sm:w-[300px] lg:w-[280px] xl:w-[300px] shrink-0 rounded-2xl overflow-hidden"
-          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.45)" }}
-        >
-          <div style={{ backgroundColor: "#e07b2a", padding: "18px 20px 14px" }}>
-            <p
-              className="mb-1"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 700,
-                fontSize: 11,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.75)",
-              }}
-            >
-              Recruiting Websites
-            </p>
-            <p
-              style={{
-                fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-                fontWeight: 400,
-                fontSize: 28,
-                lineHeight: 1,
-                color: "#fff",
-                letterSpacing: "0.02em",
-              }}
-            >
-              Sites That Demand Attention
-            </p>
-          </div>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="block w-full h-[220px] sm:h-[260px] object-cover object-top"
+      {/* Recruiting websites preview card. On mobile/tablet it sits in normal
+          flow, full width, right after the hero content. On large screens it's
+          pinned to the hero's bottom-right corner and its bottom half bleeds
+          down past the hero's edge into the Features section below — the
+          section has extra top padding reserved for exactly this overlap. */}
+      <div
+        className="relative z-20 mx-5 mb-10 sm:mx-8 md:mx-10 sm:mb-14 lg:mx-0 lg:mb-0 lg:absolute lg:right-10 xl:right-14 lg:bottom-[-130px] lg:w-[300px] rounded-2xl overflow-hidden"
+        style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.45)" }}
+      >
+        <div style={{ backgroundColor: "#e07b2a", padding: "18px 20px 14px" }}>
+          <p
+            className="mb-1"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 700,
+              fontSize: 11,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.75)",
+            }}
           >
-            <source src="/images/hero-demo.mp4" type="video/mp4" />
-          </video>
+            Recruiting Websites
+          </p>
+          <p
+            style={{
+              fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
+              fontWeight: 400,
+              fontSize: 28,
+              lineHeight: 1,
+              color: "#fff",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Sites That Demand Attention
+          </p>
         </div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="block w-full h-[220px] sm:h-[260px] object-cover object-top"
+        >
+          <source src="/images/hero-demo.mp4" type="video/mp4" />
+        </video>
       </div>
     </section>
   );

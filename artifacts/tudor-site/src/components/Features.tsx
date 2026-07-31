@@ -1,42 +1,37 @@
 const CARDS = [
   {
-    kind: "text",
     label: "Weekly Coaching",
     headline: "Film sessions.\nGame plans.\nAccountability.",
-    bg: "#111827",
+    body: "A live call every week with a coach who's been in your seat — so you always know the next right move with a recruit.",
+    gradient: "linear-gradient(160deg, #16213a 0%, #0d1526 55%, #0a101e 100%)",
   },
   {
-    kind: "image",
-    gradient: "linear-gradient(160deg, #1a2a1a 0%, #0d1f0d 40%, #0a101e 100%)",
-    accent: "rgba(224,123,42,0.08)",
-  },
-  {
-    kind: "text",
     label: "Recruit Messaging",
-    headline: "Texts and DMs that actually get responses.",
-    bg: "#111827",
+    headline: "Texts and DMs that\nactually get responses.",
+    body: "Scripted sequences for every stage of the funnel, so you're never staring at a blank text box before a big evaluation.",
+    gradient: "linear-gradient(160deg, #1a2a1a 0%, #10241a 55%, #0a101e 100%)",
   },
   {
-    kind: "image",
-    gradient: "linear-gradient(160deg, #1a1a2a 0%, #0d0d1f 40%, #0a101e 100%)",
-    accent: "rgba(14,36,78,0.4)",
+    label: "Recruiting Websites",
+    headline: "Sites recruits actually\nspend time on.",
+    body: "A home base for your program that makes the case for you — built to convert a visit into a commitment.",
+    gradient: "linear-gradient(160deg, #2a1a12 0%, #241408 55%, #0a101e 100%)",
   },
 ];
 
 export function Features() {
   return (
     <section
+      className="pt-20 lg:pt-[190px] pb-20"
       style={{
         backgroundColor: "#0a101e",
-        paddingTop: 72,
-        paddingBottom: 80,
         fontFamily: "'Inter', 'Arial', sans-serif",
       }}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
 
         {/* Section headline */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-10 lg:mb-12">
+        <div className="max-w-[620px] mb-12 lg:mb-16">
           <h2
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
@@ -52,13 +47,8 @@ export function Features() {
           </h2>
 
           <p
-            className="text-sm sm:text-[15px]"
-            style={{
-              color: "#6b7a9a",
-              lineHeight: 1.7,
-              maxWidth: 340,
-              marginTop: 12,
-            }}
+            className="text-sm sm:text-[15px] mt-6"
+            style={{ color: "#6b7a9a", lineHeight: 1.7, maxWidth: 440 }}
           >
             Every coach who outrecruits their competition is pulling the same
             three levers. We've turned each one into a system you plug into
@@ -67,35 +57,32 @@ export function Features() {
         </div>
 
         {/* Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {CARDS.map((card, i) =>
-            card.kind === "text" ? (
-              <div
-                key={i}
-                style={{
-                  backgroundColor: card.bg,
-                  borderRadius: 16,
-                  padding: "32px 28px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  minHeight: 320,
-                  border: "1px solid rgba(255,255,255,0.06)",
-                }}
-              >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {CARDS.map((card) => (
+            <div
+              key={card.label}
+              className="relative overflow-hidden rounded-2xl p-7 sm:p-8 flex flex-col justify-between"
+              style={{
+                background: card.gradient,
+                minHeight: 320,
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              <div>
                 <p
+                  className="mb-5"
                   style={{
                     fontSize: 10,
                     fontWeight: 700,
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",
                     color: "#e07b2a",
-                    marginBottom: 20,
                   }}
                 >
                   {card.label}
                 </p>
                 <p
+                  className="mb-4"
                   style={{
                     fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
                     fontSize: 28,
@@ -109,43 +96,24 @@ export function Features() {
                 >
                   {card.headline}
                 </p>
+                <p className="text-sm" style={{ color: "#9aa6bf", lineHeight: 1.6 }}>
+                  {card.body}
+                </p>
               </div>
-            ) : (
+
+              {/* Decorative accent */}
               <div
-                key={i}
+                className="self-end mt-6"
                 style={{
-                  borderRadius: 16,
-                  minHeight: 320,
-                  background: card.gradient,
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  position: "relative",
-                  overflow: "hidden",
+                  width: 44,
+                  height: 44,
+                  borderRadius: 99,
+                  backgroundColor: "rgba(224,123,42,0.16)",
+                  border: "2px solid rgba(224,123,42,0.4)",
                 }}
-              >
-                {/* Decorative accent blob */}
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: card.accent,
-                    borderRadius: 16,
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: 20,
-                    right: 20,
-                    width: 48,
-                    height: 48,
-                    borderRadius: 99,
-                    backgroundColor: "rgba(224,123,42,0.2)",
-                    border: "2px solid rgba(224,123,42,0.4)",
-                  }}
-                />
-              </div>
-            )
-          )}
+              />
+            </div>
+          ))}
         </div>
 
         {/* Bottom strip */}
