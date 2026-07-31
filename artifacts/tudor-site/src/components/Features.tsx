@@ -14,8 +14,8 @@ const CARDS = [
   {
     label: "Recruiting Websites",
     headline: "Sites recruits actually\nspend time on.",
-    image: "/images/phone-screen.png",
-    imagePosition: "top",
+    image: "/images/hero-bg-6.avif",
+    imagePosition: "center 30%",
   },
 ];
 
