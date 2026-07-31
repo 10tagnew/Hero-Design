@@ -1,17 +1,49 @@
+import { useEffect, useState } from "react";
+
 const NAV_LINKS = ["Coaching", "The Newsletter", "Articles", "Membership"];
 
+const BG_IMAGES = [
+  "/images/hero-bg.avif",
+  "/images/hero-bg-1.avif",
+  "/images/hero-bg-2.avif",
+  "/images/hero-bg-3.avif",
+  "/images/hero-bg-4.avif",
+  "/images/hero-bg-5.avif",
+  "/images/hero-bg-6.avif",
+];
+
 export function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % BG_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       className="relative w-full flex flex-col"
       style={{
         fontFamily: "'Inter', 'Arial', sans-serif",
         minHeight: "100svh",
-        backgroundImage: "url('/images/hero-bg.avif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center 30%",
       }}
     >
+      {/* Slideshow background layers */}
+      {BG_IMAGES.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('${src}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
+            opacity: i === current ? 1 : 0,
+            transition: "opacity 1.2s ease-in-out",
+          }}
+        />
+      ))}
       {/* Darkening overlay — fades to the exact navy of the Features section
           below so the two sections blend with no visible seam. */}
       <div
