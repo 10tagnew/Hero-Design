@@ -14,8 +14,8 @@ const TILES = [
   {
     title: "Membership",
     sub: "Join the coach community",
-    image: "/images/coaches.png",
-    imagePosition: "center 15%",
+    image: "/images/hero-bg-2.avif",
+    imagePosition: "center 30%",
   },
 ];
 
