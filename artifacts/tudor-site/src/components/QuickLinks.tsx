@@ -2,14 +2,14 @@ const TILES = [
   {
     title: "The Newsletter",
     sub: "Twice-a-month recruiting tactics",
-    image: "/images/hero-bg.avif",
-    imagePosition: "center 10%",
+    image: "/images/hero-bg-1.avif",
+    imagePosition: "center 30%",
   },
   {
     title: "Recruiting Websites",
     sub: "See a live example",
-    image: "/images/hero-bg.avif",
-    imagePosition: "center 60%",
+    image: "/images/hero-bg-4.avif",
+    imagePosition: "center 30%",
   },
   {
     title: "Membership",
