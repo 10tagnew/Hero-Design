@@ -2,20 +2,20 @@ const CARDS = [
   {
     label: "Weekly Coaching",
     headline: "Film sessions.\nGame plans.\nAccountability.",
-    body: "A live call every week with a coach who's been in your seat — so you always know the next right move with a recruit.",
-    gradient: "linear-gradient(160deg, #16213a 0%, #0d1526 55%, #0a101e 100%)",
+    image: "/images/coaches.png",
+    imagePosition: "center 15%",
   },
   {
     label: "Recruit Messaging",
     headline: "Texts and DMs that\nactually get responses.",
-    body: "Scripted sequences for every stage of the funnel, so you're never staring at a blank text box before a big evaluation.",
-    gradient: "linear-gradient(160deg, #1a2a1a 0%, #10241a 55%, #0a101e 100%)",
+    image: "/images/hero-bg.avif",
+    imagePosition: "center 20%",
   },
   {
     label: "Recruiting Websites",
     headline: "Sites recruits actually\nspend time on.",
-    body: "A home base for your program that makes the case for you — built to convert a visit into a commitment.",
-    gradient: "linear-gradient(160deg, #2a1a12 0%, #241408 55%, #0a101e 100%)",
+    image: "/images/phone-screen.png",
+    imagePosition: "top",
   },
 ];
 
@@ -23,32 +23,28 @@ export function Features() {
   return (
     <section
       className="pt-20 lg:pt-[190px] pb-20"
-      style={{
-        backgroundColor: "#0a101e",
-        fontFamily: "'Inter', 'Arial', sans-serif",
-      }}
+      style={{ backgroundColor: "#000", fontFamily: "'Inter', 'Arial', sans-serif" }}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
 
         {/* Section headline */}
-        <div className="max-w-[620px] mb-12 lg:mb-16">
+        <div className="mb-12 lg:mb-16">
           <h2
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-              fontSize: "clamp(40px, 8vw, 100px)",
-              lineHeight: 0.9,
+              fontSize: "clamp(64px, 14vw, 160px)",
+              lineHeight: 0.87,
               color: "#fff",
               fontWeight: 400,
               letterSpacing: "0.01em",
             }}
           >
-            THE TOOLS YOU NEED<br />
-            <span style={{ color: "#e07b2a" }}>TO SUCCEED.</span>
+            NEXT<br />LEVEL.
           </h2>
 
           <p
             className="text-sm sm:text-[15px] mt-6"
-            style={{ color: "#6b7a9a", lineHeight: 1.7, maxWidth: 440 }}
+            style={{ color: "#7a8399", lineHeight: 1.7, maxWidth: 440 }}
           >
             Every coach who outrecruits their competition is pulling the same
             three levers. We've turned each one into a system you plug into
@@ -61,16 +57,12 @@ export function Features() {
           {CARDS.map((card) => (
             <div
               key={card.label}
-              className="relative overflow-hidden rounded-2xl p-7 sm:p-8 flex flex-col justify-between"
-              style={{
-                background: card.gradient,
-                minHeight: 320,
-                border: "1px solid rgba(255,255,255,0.06)",
-              }}
+              className="relative overflow-hidden rounded-2xl flex"
+              style={{ backgroundColor: "#141414", minHeight: 300, border: "1px solid rgba(255,255,255,0.06)" }}
             >
-              <div>
+              <div className="flex-1 min-w-0 p-6 sm:p-7 flex flex-col justify-center">
                 <p
-                  className="mb-5"
+                  className="mb-4"
                   style={{
                     fontSize: 10,
                     fontWeight: 700,
@@ -82,11 +74,10 @@ export function Features() {
                   {card.label}
                 </p>
                 <p
-                  className="mb-4"
                   style={{
                     fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-                    fontSize: 28,
-                    lineHeight: 1.1,
+                    fontSize: 24,
+                    lineHeight: 1.15,
                     color: "#fff",
                     fontWeight: 400,
                     letterSpacing: "0.02em",
@@ -96,22 +87,16 @@ export function Features() {
                 >
                   {card.headline}
                 </p>
-                <p className="text-sm" style={{ color: "#9aa6bf", lineHeight: 1.6 }}>
-                  {card.body}
-                </p>
               </div>
-
-              {/* Decorative accent */}
-              <div
-                className="self-end mt-6"
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 99,
-                  backgroundColor: "rgba(224,123,42,0.16)",
-                  border: "2px solid rgba(224,123,42,0.4)",
-                }}
-              />
+              <div className="relative w-[36%] shrink-0">
+                <img
+                  src={card.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: card.imagePosition }}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -124,7 +109,7 @@ export function Features() {
             paddingTop: 32,
           }}
         >
-          <p style={{ color: "#6b7a9a", fontSize: 14 }}>
+          <p style={{ color: "#7a8399", fontSize: 14 }}>
             Trusted by coaches at D1, D2, D3 &amp; NAIA programs.
           </p>
           <a

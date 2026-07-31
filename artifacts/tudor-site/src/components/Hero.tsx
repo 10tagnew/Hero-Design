@@ -12,13 +12,13 @@ export function Hero() {
         backgroundPosition: "center 30%",
       }}
     >
-      {/* Darkening overlay — fades to the exact navy of the Features section
+      {/* Darkening overlay — fades to black to match the Features section
           below so the two sections blend with no visible seam. */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,16,30,0.15) 0%, rgba(10,16,30,0.25) 22%, rgba(10,16,30,0.6) 65%, #0a101e 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 22%, rgba(0,0,0,0.7) 65%, #000 100%)",
         }}
       />
 
