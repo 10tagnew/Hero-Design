@@ -18,7 +18,7 @@ export function Hero() {
   useEffect(() => {
     const id = setInterval(() => {
       setCurrent((c) => (c + 1) % BG_IMAGES.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(id);
   }, []);
 
