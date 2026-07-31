@@ -2,8 +2,8 @@ const CARDS = [
   {
     label: "Weekly Coaching",
     headline: "Film sessions.\nGame plans.\nAccountability.",
-    image: "/images/coaches.png",
-    imagePosition: "center 15%",
+    image: "/images/hero-bg-3.avif",
+    imagePosition: "center 30%",
   },
   {
     label: "Recruit Messaging",
