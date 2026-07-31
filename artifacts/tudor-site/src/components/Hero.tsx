@@ -91,7 +91,7 @@ export function Hero() {
             className="leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base"
             style={{ color: "#d3dae8", maxWidth: 460, lineHeight: 1.65 }}
           >
-            Coaches work with us for one reason: land their dream draft classes year after year. It's possible through our coaching, our recruit messaging, and our recruiting websites.
+            Coaches work with us for one reason: land their dream recruiting classes year after year. It's possible through our coaching, our recruit messaging, and our recruiting websites.
           </p>
 
           {/* CTA buttons */}
