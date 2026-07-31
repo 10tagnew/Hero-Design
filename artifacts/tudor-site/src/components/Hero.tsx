@@ -158,6 +158,32 @@ export function Hero() {
         >
           <source src="/images/hero-demo.mp4" type="video/mp4" />
         </video>
+
+        {/* CTA */}
+        <a
+          href="#"
+          className="flex items-center justify-between px-5 py-4 transition-colors hover:bg-white/5"
+          style={{ backgroundColor: "#12182a" }}
+        >
+          <span
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 700,
+              fontSize: 13,
+              color: "#fff",
+            }}
+          >
+            See Live Examples
+          </span>
+          <span
+            className="flex items-center justify-center rounded-full shrink-0"
+            style={{ width: 30, height: 30, backgroundColor: "#e07b2a" }}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
   );
