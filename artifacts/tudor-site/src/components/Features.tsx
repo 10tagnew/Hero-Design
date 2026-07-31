@@ -35,15 +35,15 @@ export function Features() {
           <h2
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-              fontSize: "clamp(56px, 10vw, 130px)",
+              fontSize: "clamp(40px, 8vw, 100px)",
               lineHeight: 0.9,
               color: "#fff",
               fontWeight: 400,
               letterSpacing: "0.01em",
             }}
           >
-            THREE<br />
-            <span style={{ color: "#e07b2a" }}>WEAPONS.</span>
+            THE TOOLS YOU NEED<br />
+            <span style={{ color: "#e07b2a" }}>TO SUCCEED.</span>
           </h2>
 
           <p
