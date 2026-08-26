@@ -1,3 +1,5 @@
+import { SubstackForm } from "@/components/SubstackForm";
+
 const ISSUES = [
   { tag: "AUG", num: "12", title: "The 9PM Text That Gets Answered", meta: "Issue 47 · Messaging" },
   { tag: "JUL", num: "29", title: "What Top-25 Programs Do Differently", meta: "Issue 46 · Strategy" },
@@ -46,7 +48,9 @@ export function Highlights() {
               Latest From<br />The Newsletter
             </h3>
             <a
-              href="#"
+              href="https://dantudor.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="View all newsletter issues"
               className="shrink-0 flex items-center justify-center rounded-full transition-transform hover:scale-105"
               style={{ width: 48, height: 48, backgroundColor: "#e07b2a" }}
@@ -85,7 +89,9 @@ export function Highlights() {
           </div>
 
           <a
-            href="#"
+            href="https://dantudor.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block mt-7 mb-5 text-sm font-semibold"
             style={{ color: "#e07b2a" }}
           >
@@ -93,26 +99,15 @@ export function Highlights() {
           </a>
 
           {/* Newsletter signup CTA */}
-          <form
-            className="flex flex-col sm:flex-row gap-2 pt-5"
-            style={{ borderTop: "1px solid #eceef2" }}
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              required
-              placeholder="Your email address"
-              className="flex-1 min-w-0 px-4 py-3 rounded-full text-sm outline-none"
-              style={{ backgroundColor: "#f3f5f9", border: "1px solid #e4e7ee", color: "#1a2744" }}
-            />
-            <button
-              type="submit"
-              className="px-5 py-3 rounded-full font-bold text-white text-sm transition-opacity hover:opacity-90 whitespace-nowrap"
-              style={{ backgroundColor: "#e07b2a" }}
-            >
-              Subscribe »
-            </button>
-          </form>
+          <SubstackForm
+            formClassName="flex flex-col sm:flex-row gap-2 pt-5"
+            formStyle={{ borderTop: "1px solid #eceef2" }}
+            placeholder="Your email address"
+            inputClassName="flex-1 min-w-0 px-4 py-3 rounded-full text-sm outline-none"
+            inputStyle={{ backgroundColor: "#f3f5f9", border: "1px solid #e4e7ee", color: "#1a2744" }}
+            buttonClassName="px-5 py-3 rounded-full font-bold text-white text-sm transition-opacity hover:opacity-90 whitespace-nowrap"
+            buttonStyle={{ backgroundColor: "#e07b2a" }}
+          />
         </div>
       </div>
     </section>

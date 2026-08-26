@@ -11,7 +11,9 @@ import { Features } from '@/components/Features';
 import { Highlights } from '@/components/Highlights';
 import { QuickLinks } from '@/components/QuickLinks';
 import { Newsletter } from '@/components/Newsletter';
+import { Podcast } from '@/components/Podcast';
 import { Footer } from '@/components/Footer';
+import TotalRecruitingSolution from '@/pages/TotalRecruitingSolution';
 
 function Home() {
   return (
@@ -21,6 +23,7 @@ function Home() {
       <Highlights />
       <QuickLinks />
       <Newsletter />
+      <Podcast />
       <Footer />
     </>
   );
@@ -30,6 +33,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/total-recruiting-solution" component={TotalRecruitingSolution} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,3 +1,5 @@
+import { SubstackForm } from "@/components/SubstackForm";
+
 export function Newsletter() {
   return (
     <section
@@ -26,26 +28,15 @@ export function Newsletter() {
           </p>
         </div>
 
-        <form
-          className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0"
-          style={{ maxWidth: 440 }}
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            type="email"
-            required
-            placeholder="Enter your email address"
-            className="flex-1 px-5 py-3.5 rounded-full text-sm outline-none"
-            style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          />
-          <button
-            type="submit"
-            className="px-7 py-3.5 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90 whitespace-nowrap"
-            style={{ backgroundColor: "#e07b2a" }}
-          >
-            Subscribe »
-          </button>
-        </form>
+        <SubstackForm
+          formClassName="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0"
+          formStyle={{ maxWidth: 440 }}
+          placeholder="Enter your email address"
+          inputClassName="flex-1 px-5 py-3.5 rounded-full text-sm outline-none"
+          inputStyle={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          buttonClassName="px-7 py-3.5 rounded-full font-bold text-sm text-white transition-opacity hover:opacity-90 whitespace-nowrap"
+          buttonStyle={{ backgroundColor: "#e07b2a" }}
+        />
       </div>
     </section>
   );
