@@ -2,10 +2,12 @@ import { Link } from "wouter";
 
 const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Coaching", href: "#" },
-  { label: "The Solution", href: "/total-recruiting-solution" },
+  { label: "Recruiting", href: "/total-recruiting-solution" },
+  { label: "Workshops", href: "/on-site-campus-workshops" },
   { label: "The Newsletter", href: "#" },
-  { label: "Articles", href: "#" },
+  { label: "Articles", href: "/articles" },
   { label: "Membership", href: "#" },
+  { label: "Tudor University", href: "https://tudoruniversity.thinkific.com/" },
 ];
 
 export function Nav() {
@@ -24,26 +26,36 @@ export function Nav() {
       </Link>
 
       {/* Nav links */}
-      <div className="hidden lg:flex items-center gap-7">
-        {NAV_LINKS.map((item) =>
-          item.href.startsWith("/") ? (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
-            >
+      <div className="hidden xl:flex items-center gap-5">
+        {NAV_LINKS.map((item) => {
+          const className =
+            "text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap";
+          if (item.href.startsWith("/")) {
+            return (
+              <Link key={item.label} href={item.href} className={className}>
+                {item.label}
+              </Link>
+            );
+          }
+          if (item.href.startsWith("http")) {
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+              >
+                {item.label}
+              </a>
+            );
+          }
+          return (
+            <a key={item.label} href={item.href} className={className}>
               {item.label}
             </a>
-          )
-        )}
+          );
+        })}
       </div>
 
       {/* CTA buttons */}
