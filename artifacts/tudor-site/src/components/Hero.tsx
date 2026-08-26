@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-
-const NAV_LINKS = ["Coaching", "The Newsletter", "Articles", "Membership"];
+import { Nav } from "@/components/Nav";
+import { SubstackForm } from "@/components/SubstackForm";
 
 const BG_IMAGES = [
   "/images/hero-bg.avif",
@@ -54,50 +54,7 @@ export function Hero() {
         }}
       />
 
-      {/* Navbar — floats with margin from the top edge, photo visible behind/around it */}
-      <nav
-        className="relative z-10 flex items-center justify-between mx-4 mt-4 sm:mx-6 sm:mt-6 md:mx-10 md:mt-8 px-4 sm:px-6 py-2.5 sm:py-3 bg-white rounded-full"
-        style={{ minHeight: 60, boxShadow: "0 8px 24px rgba(15, 23, 42, 0.18)" }}
-      >
-        {/* Logo */}
-        <div className="flex items-center shrink-0">
-          <img
-            src="/images/tudor-logo.jpeg"
-            alt="Tudor Collegiate Strategies"
-            className="h-9 sm:h-11 w-auto"
-          />
-        </div>
-
-        {/* Nav links */}
-        <div className="hidden lg:flex items-center gap-7">
-          {NAV_LINKS.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-        {/* CTA buttons */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          <a
-            href="#"
-            className="hidden sm:inline text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors"
-          >
-            Log In
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-white text-xs sm:text-sm transition-colors hover:opacity-90"
-            style={{ backgroundColor: "#e07b2a" }}
-          >
-            Join Free <span aria-hidden="true">»</span>
-          </a>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[360px] xl:pr-[400px] pt-10 pb-14 sm:pb-16">
@@ -127,7 +84,7 @@ export function Hero() {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap mb-8 sm:mb-10">
             <a
               href="#"
               className="flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 font-bold text-white text-sm rounded-full transition-opacity hover:opacity-90"
@@ -141,6 +98,25 @@ export function Hero() {
             >
               Recruiting Websites »
             </a>
+          </div>
+
+          {/* Newsletter signup */}
+          <div className="max-w-[420px]">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-2.5"
+              style={{ color: "#e07b2a", letterSpacing: "0.14em" }}
+            >
+              Get The Newsletter
+            </p>
+            <SubstackForm
+              formClassName="flex flex-col sm:flex-row gap-2"
+              placeholder="Your email address"
+              inputClassName="flex-1 min-w-0 px-4 py-3 rounded-full text-sm outline-none"
+              inputStyle={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.25)", color: "#fff" }}
+              buttonClassName="px-5 py-3 rounded-full font-bold text-white text-sm transition-colors hover:bg-white/10 whitespace-nowrap"
+              buttonStyle={{ border: "2px solid #fff", backgroundColor: "transparent" }}
+              buttonLabel="Subscribe »"
+            />
           </div>
         </div>
       </div>
