@@ -14,6 +14,8 @@ import { Newsletter } from '@/components/Newsletter';
 import { Podcast } from '@/components/Podcast';
 import { Footer } from '@/components/Footer';
 import TotalRecruitingSolution from '@/pages/TotalRecruitingSolution';
+import OnSiteCampusWorkshops from '@/pages/OnSiteCampusWorkshops';
+import Articles from '@/pages/Articles';
 
 function Home() {
   return (
@@ -34,6 +36,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/total-recruiting-solution" component={TotalRecruitingSolution} />
+      <Route path="/on-site-campus-workshops" component={OnSiteCampusWorkshops} />
+      <Route path="/articles" component={Articles} />
       <Route component={NotFound} />
     </Switch>
   );
