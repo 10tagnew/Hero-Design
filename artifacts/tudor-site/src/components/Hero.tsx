@@ -1,27 +1,7 @@
-import { useEffect, useState } from "react";
 import { Nav } from "@/components/Nav";
 import { SubstackForm } from "@/components/SubstackForm";
 
-const BG_IMAGES = [
-  "/images/hero-bg.avif",
-  "/images/hero-bg-1.avif",
-  "/images/hero-bg-2.avif",
-  "/images/hero-bg-3.avif",
-  "/images/hero-bg-4.avif",
-  "/images/hero-bg-5.avif",
-  "/images/hero-bg-6.avif",
-];
-
 export function Hero() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent((c) => (c + 1) % BG_IMAGES.length);
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section
       className="relative w-full flex flex-col"
@@ -30,20 +10,18 @@ export function Hero() {
         minHeight: "100svh",
       }}
     >
-      {/* Slideshow background layers */}
-      {BG_IMAGES.map((src, i) => (
-        <div
-          key={src}
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url('${src}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 30%",
-            opacity: i === current ? 1 : 0,
-            transition: "opacity 1.2s ease-in-out",
-          }}
-        />
-      ))}
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/images/hero-bg.avif"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center 30%" }}
+      >
+        <source src="/images/hero-bg-video.mp4" type="video/mp4" />
+      </video>
       {/* Darkening overlay — fades to black to match the Features section
           below so the two sections blend with no visible seam. */}
       <div
