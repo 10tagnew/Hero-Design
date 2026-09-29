@@ -12,8 +12,7 @@ const ADMISSIONS_NAV_LINKS = [
 // PLACEHOLDER: all copy below is draft — needs Tyler's sign-off before this page
 // goes live to real admissions prospects.
 
-// PLACEHOLDER: replace with admissions-specific photography once Tyler provides it.
-const HERO_IMAGE = "/images/hero-bg-2.avif";
+const HERO_IMAGE = "/images/admissions-hero.jpg";
 
 // PLACEHOLDER: card copy (and stand-in images) — replace with approved copy.
 const INCLUDES = [
