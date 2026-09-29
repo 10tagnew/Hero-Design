@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 
-const NAV_LINKS: { label: string; href: string }[] = [
+type NavLink = { label: string; href: string };
+
+const NAV_LINKS: NavLink[] = [
   { label: "Coaching", href: "#" },
   { label: "Recruiting", href: "/total-recruiting-solution" },
   { label: "Workshops", href: "/on-site-campus-workshops" },
@@ -10,14 +12,15 @@ const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Tudor University", href: "https://tudoruniversity.thinkific.com/" },
 ];
 
-export function Nav() {
+export function Nav({ links = NAV_LINKS }: { links?: NavLink[] } = {}) {
   return (
     <nav
       className="relative z-10 flex items-center justify-between mx-4 mt-4 sm:mx-6 sm:mt-6 md:mx-10 md:mt-8 px-4 sm:px-6 py-2.5 sm:py-3 bg-white rounded-full"
       style={{ minHeight: 60, boxShadow: "0 8px 24px rgba(15, 23, 42, 0.18)" }}
     >
-      {/* Logo */}
-      <Link href="/" className="flex items-center shrink-0">
+      {/* Logo — re-opens the audience chooser. "?choose=1" tells the splash
+          not to auto-redirect a returning visitor straight back here. */}
+      <Link href="/?choose=1" className="flex items-center shrink-0">
         <img
           src="/images/tudor-logo.jpeg"
           alt="Tudor Collegiate Strategies"
@@ -27,7 +30,7 @@ export function Nav() {
 
       {/* Nav links */}
       <div className="hidden xl:flex items-center gap-5">
-        {NAV_LINKS.map((item) => {
+        {links.map((item) => {
           const className =
             "text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors whitespace-nowrap";
           if (item.href.startsWith("/")) {
