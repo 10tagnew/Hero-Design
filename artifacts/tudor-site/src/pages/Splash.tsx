@@ -24,8 +24,7 @@ const PANELS: {
     href: "/admissions",
     label: "Admissions",
     description: "Weekly strategy, messaging, and websites for enrollment teams.",
-    // TODO: swap for admissions-specific photo/video once Tyler provides it
-    image: "/images/hero-bg-2.avif",
+    image: "/images/admissions-hero.jpg",
   },
 ];
 
