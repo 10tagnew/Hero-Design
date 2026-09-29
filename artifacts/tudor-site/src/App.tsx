@@ -6,35 +6,19 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 
 const queryClient = new QueryClient();
 
-import { Hero } from '@/components/Hero';
-import { Features } from '@/components/Features';
-import { Highlights } from '@/components/Highlights';
-import { QuickLinks } from '@/components/QuickLinks';
-import { Newsletter } from '@/components/Newsletter';
-import { Podcast } from '@/components/Podcast';
-import { Footer } from '@/components/Footer';
+import Splash from '@/pages/Splash';
+import Coaches from '@/pages/Coaches';
+import Admissions from '@/pages/Admissions';
 import TotalRecruitingSolution from '@/pages/TotalRecruitingSolution';
 import OnSiteCampusWorkshops from '@/pages/OnSiteCampusWorkshops';
 import Articles from '@/pages/Articles';
 
-function Home() {
-  return (
-    <>
-      <Hero />
-      <Features />
-      <Highlights />
-      <QuickLinks />
-      <Newsletter />
-      <Podcast />
-      <Footer />
-    </>
-  );
-}
-
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={Splash} />
+      <Route path="/coaches" component={Coaches} />
+      <Route path="/admissions" component={Admissions} />
       <Route path="/total-recruiting-solution" component={TotalRecruitingSolution} />
       <Route path="/on-site-campus-workshops" component={OnSiteCampusWorkshops} />
       <Route path="/articles" component={Articles} />
