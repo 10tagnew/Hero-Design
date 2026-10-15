@@ -4,11 +4,8 @@ import { SubstackForm } from "@/components/SubstackForm";
 export function Hero() {
   return (
     <section
-      className="relative w-full flex flex-col"
-      style={{
-        fontFamily: "'Inter', 'Arial', sans-serif",
-        minHeight: "100svh",
-      }}
+      className="relative w-full flex flex-col min-h-[100svh] lg:min-h-[clamp(560px,56.25vw,100svh)]"
+      style={{ fontFamily: "'Inter', 'Arial', sans-serif" }}
     >
       {/* Video background */}
       <video
@@ -18,24 +15,25 @@ export function Hero() {
         playsInline
         poster="/images/hero-bg-video-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "center 30%" }}
+        style={{ objectPosition: "center center" }}
       >
         <source src="/images/hero-bg-video.mp4" type="video/mp4" />
       </video>
-      {/* Darkening overlay — fades to black to match the Features section
-          below so the two sections blend with no visible seam. */}
+      {/* Darkening overlay. Light at the top (the header is transparent now),
+          fading to black at the bottom to match the Features section below so
+          the two sections blend with no visible seam. */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 22%, rgba(0,0,0,0.7) 65%, #000 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.18) 22%, rgba(0,0,0,0.7) 65%, #000 100%)",
         }}
       />
 
       <Nav />
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[360px] xl:pr-[400px] pt-10 pb-14 sm:pb-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[360px] xl:pr-[400px] pt-28 md:pt-40 pb-14 sm:pb-16">
         <div className="max-w-[720px]">
           {/* Headline */}
           <h1

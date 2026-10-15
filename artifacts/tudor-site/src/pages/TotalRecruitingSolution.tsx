@@ -98,7 +98,7 @@ export default function TotalRecruitingSolution() {
           }}
         />
         <Nav />
-        <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 pt-10 pb-14 sm:pb-20">
+        <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 pt-28 md:pt-40 pb-14 sm:pb-20">
           <div className="max-w-[820px]">
             <p
               className="text-xs sm:text-sm font-bold uppercase tracking-widest mb-4"
