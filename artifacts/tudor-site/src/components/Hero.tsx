@@ -1,5 +1,4 @@
 import { Nav } from "@/components/Nav";
-import { SubstackForm } from "@/components/SubstackForm";
 
 export function Hero() {
   return (
@@ -33,14 +32,13 @@ export function Hero() {
       <Nav />
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[360px] xl:pr-[400px] pt-28 md:pt-40 pb-14 sm:pb-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[320px] xl:pr-[340px] pt-28 md:pt-36 pb-14 sm:pb-16">
         <div className="max-w-[720px]">
           {/* Headline */}
           <h1
-            className="uppercase mb-5 sm:mb-6"
+            className="uppercase mb-5 sm:mb-6 text-[clamp(44px,9vw,120px)] [@media(max-height:800px)]:text-[clamp(40px,min(9vw,13svh),96px)]"
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-              fontSize: "clamp(52px, 13vw, 160px)",
               lineHeight: 0.87,
               letterSpacing: "0.01em",
               fontWeight: 400,
@@ -60,7 +58,7 @@ export function Hero() {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex items-center gap-3 sm:gap-4 flex-wrap mb-8 sm:mb-10">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
             <a
               href="#"
               className="flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 font-bold text-white text-sm rounded-full transition-opacity hover:opacity-90"
@@ -75,38 +73,17 @@ export function Hero() {
               Recruiting Websites »
             </a>
           </div>
-
-          {/* Newsletter signup */}
-          <div className="max-w-[420px]">
-            <p
-              className="text-xs font-bold uppercase tracking-widest mb-2.5"
-              style={{ color: "#e07b2a", letterSpacing: "0.14em" }}
-            >
-              Get The Newsletter
-            </p>
-            <SubstackForm
-              formClassName="flex flex-col sm:flex-row gap-2"
-              placeholder="Your email address"
-              inputClassName="flex-1 min-w-0 px-4 py-3 rounded-full text-sm outline-none"
-              inputStyle={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.25)", color: "#fff" }}
-              buttonClassName="px-5 py-3 rounded-full font-bold text-white text-sm transition-colors hover:bg-white/10 whitespace-nowrap"
-              buttonStyle={{ border: "2px solid #fff", backgroundColor: "transparent" }}
-              buttonLabel="Subscribe »"
-            />
-          </div>
         </div>
       </div>
 
-      {/* Recruiting websites preview card. On mobile/tablet it sits in normal
-          flow, full width, right after the hero content. On large screens it's
-          pinned to the hero's bottom-right corner and its bottom half bleeds
-          down past the hero's edge into the Features section below — the
-          section has extra top padding reserved for exactly this overlap. */}
+      {/* Recruiting websites preview card. Desktop only: pinned inside the hero's
+          bottom-right corner, level with the bottom of the headline block
+          (matches the content's bottom padding). Hidden on mobile/tablet. */}
       <div
-        className="relative z-20 mx-5 mb-10 sm:mx-8 md:mx-10 sm:mb-14 lg:mx-0 lg:mb-0 lg:absolute lg:right-10 xl:right-14 lg:bottom-[-130px] lg:w-[300px] rounded-2xl overflow-hidden"
+        className="hidden lg:block absolute z-20 lg:right-10 xl:right-14 lg:bottom-16 lg:w-[260px] rounded-2xl overflow-hidden"
         style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.45)" }}
       >
-        <div style={{ backgroundColor: "#e07b2a", padding: "18px 20px 14px" }}>
+        <div style={{ backgroundColor: "#e07b2a", padding: "14px 16px 12px" }}>
           <p
             className="mb-1"
             style={{
@@ -124,7 +101,7 @@ export function Hero() {
             style={{
               fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
               fontWeight: 400,
-              fontSize: 28,
+              fontSize: 24,
               lineHeight: 1,
               color: "#fff",
               letterSpacing: "0.02em",
@@ -138,7 +115,7 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="block w-full h-[220px] sm:h-[260px] object-cover object-top"
+          className="block w-full h-[180px] object-cover object-top"
         >
           <source src="/images/hero-demo.mp4" type="video/mp4" />
         </video>
@@ -146,7 +123,7 @@ export function Hero() {
         {/* CTA */}
         <a
           href="#"
-          className="flex items-center justify-between px-5 py-4 transition-colors hover:bg-white/5"
+          className="flex items-center justify-between px-4 py-3 transition-colors hover:bg-white/5"
           style={{ backgroundColor: "#12182a" }}
         >
           <span

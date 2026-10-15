@@ -71,6 +71,13 @@ export function Nav({ links = NAV_LINKS }: { links?: NavLink[] } = {}) {
 
   return (
     <>
+      {/* Soft dark gradient behind the header so the logo and hamburger stay
+          readable over bright video frames. */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 h-[160px] z-20 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.35) 60%, transparent)" }}
+      />
       <header className="absolute top-0 left-0 right-0 z-30 flex items-start justify-between p-5 md:p-8">
         {/* Logo. It re-opens the audience chooser. "?choose=1" tells the splash
             not to auto-redirect a returning visitor straight back here. */}
@@ -78,7 +85,7 @@ export function Nav({ links = NAV_LINKS }: { links?: NavLink[] } = {}) {
           <img
             src="/images/tcs-logo.png"
             alt="Tudor Collegiate Strategies"
-            className="h-16 md:h-[88px] w-auto"
+            className="h-14 md:h-[72px] w-auto"
             style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.55))" }}
           />
         </Link>
@@ -90,14 +97,14 @@ export function Nav({ links = NAV_LINKS }: { links?: NavLink[] } = {}) {
           aria-expanded={open}
           aria-controls="site-menu"
           onClick={() => setOpen(true)}
-          className="flex flex-col items-center justify-center gap-[7px] w-11 h-11 shrink-0"
+          className="flex flex-col items-center justify-center gap-[5px] w-11 h-11 shrink-0 rounded-full backdrop-blur-sm"
+          style={{ backgroundColor: "rgba(0,0,0,0.45)" }}
         >
           {[0, 1, 2].map((i) => (
             <span
               key={i}
               aria-hidden="true"
-              className="block h-[2px] w-7 rounded-full bg-white"
-              style={{ filter: "drop-shadow(0 1px 4px rgba(0,0,0,0.55))" }}
+              className="block h-[2px] w-6 rounded-full bg-white"
             />
           ))}
         </button>

@@ -22,7 +22,7 @@ const CARDS = [
 export function Features() {
   return (
     <section
-      className="pt-20 lg:pt-[190px] pb-20"
+      className="pt-20 pb-20"
       style={{ backgroundColor: "#000", fontFamily: "'Inter', 'Arial', sans-serif" }}
     >
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-10">
