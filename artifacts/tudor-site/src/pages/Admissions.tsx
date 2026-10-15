@@ -67,7 +67,7 @@ export default function Admissions() {
           }}
         />
         <Nav links={ADMISSIONS_NAV_LINKS} />
-        <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 pt-10 pb-14 sm:pb-20">
+        <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 pt-28 md:pt-40 pb-14 sm:pb-20">
           <div className="max-w-[820px]">
             {/* PLACEHOLDER: eyebrow, H1, and subhead */}
             <p

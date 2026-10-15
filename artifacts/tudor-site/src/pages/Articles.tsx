@@ -62,9 +62,9 @@ export default function Articles() {
   return (
     <div style={{ fontFamily: "'Inter', 'Arial', sans-serif" }}>
       {/* Page header */}
-      <section className="w-full flex flex-col" style={{ backgroundColor: "#000" }}>
+      <section className="relative w-full flex flex-col" style={{ backgroundColor: "#000" }}>
         <Nav />
-        <div className="px-5 sm:px-8 md:px-10 pt-14 pb-12 sm:pt-20 sm:pb-16">
+        <div className="px-5 sm:px-8 md:px-10 pt-32 pb-12 sm:pt-36 md:pt-44 sm:pb-16">
           <p
             className="text-xs sm:text-sm font-bold uppercase tracking-widest mb-4"
             style={{ color: "#e07b2a", letterSpacing: "0.2em" }}
