@@ -16,7 +16,7 @@ export function Hero() {
         loop
         muted
         playsInline
-        poster="/images/hero-bg.avif"
+        poster="/images/hero-bg-video-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: "center 30%" }}
       >
