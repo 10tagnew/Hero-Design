@@ -431,3 +431,10 @@
     inset: -1px;
   }
 }
+
+/* Smooth in-page anchor scrolling (e.g. the hero's "Recruiting Websites" button). */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

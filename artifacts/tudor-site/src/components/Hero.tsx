@@ -32,7 +32,7 @@ export function Hero() {
       <Nav />
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 lg:pr-[320px] xl:pr-[340px] pt-28 md:pt-36 pb-14 sm:pb-16">
+      <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 pt-28 md:pt-36 pb-14 sm:pb-16">
         <div className="max-w-[720px]">
           {/* Headline */}
           <h1
@@ -67,7 +67,7 @@ export function Hero() {
               Why This Works »
             </a>
             <a
-              href="#"
+              href="#recruiting-websites"
               className="flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 font-bold text-white text-sm rounded-full border-2 border-white transition-all hover:bg-white hover:text-gray-900"
             >
               Recruiting Websites »
@@ -76,76 +76,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Recruiting websites preview card. Desktop only: pinned inside the hero's
-          bottom-right corner, level with the bottom of the headline block
-          (matches the content's bottom padding). Hidden on mobile/tablet. */}
-      <div
-        className="hidden lg:block absolute z-20 lg:right-10 xl:right-14 lg:bottom-16 lg:w-[260px] rounded-2xl overflow-hidden"
-        style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.45)" }}
-      >
-        <div style={{ backgroundColor: "#e07b2a", padding: "14px 16px 12px" }}>
-          <p
-            className="mb-1"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 700,
-              fontSize: 11,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.75)",
-            }}
-          >
-            Recruiting Websites
-          </p>
-          <p
-            style={{
-              fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
-              fontWeight: 400,
-              fontSize: 24,
-              lineHeight: 1,
-              color: "#fff",
-              letterSpacing: "0.02em",
-            }}
-          >
-            Sites That Demand Attention
-          </p>
-        </div>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="block w-full h-[180px] object-cover object-top"
-        >
-          <source src="/images/hero-demo.mp4" type="video/mp4" />
-        </video>
-
-        {/* CTA */}
-        <a
-          href="#"
-          className="flex items-center justify-between px-4 py-3 transition-colors hover:bg-white/5"
-          style={{ backgroundColor: "#12182a" }}
-        >
-          <span
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 700,
-              fontSize: 13,
-              color: "#fff",
-            }}
-          >
-            See Live Examples
-          </span>
-          <span
-            className="flex items-center justify-center rounded-full shrink-0"
-            style={{ width: 30, height: 30, backgroundColor: "#e07b2a" }}
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-              <path d="M6 18L18 6M18 6H8M18 6V16" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        </a>
-      </div>
     </section>
   );
 }
