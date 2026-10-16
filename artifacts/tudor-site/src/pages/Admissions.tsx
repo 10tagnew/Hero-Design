@@ -7,7 +7,10 @@ const ADMISSIONS_NAV_LINKS = [
   { label: "Admissions Solution", href: "#overview" },
   { label: "How It Works", href: "#included" },
   { label: "Articles", href: "/articles" },
+  { label: "Coaches", href: "/coaches" },
 ];
+
+const COACHES_SWITCH = { label: "Coaches", href: "/coaches" };
 
 // PLACEHOLDER: all copy below is draft — needs Tyler's sign-off before this page
 // goes live to real admissions prospects.
@@ -66,7 +69,7 @@ export default function Admissions() {
               "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 30%, rgba(0,0,0,0.8) 75%, #000 100%)",
           }}
         />
-        <Nav links={ADMISSIONS_NAV_LINKS} />
+        <Nav links={ADMISSIONS_NAV_LINKS} audienceSwitch={COACHES_SWITCH} />
         <div className="relative z-10 flex-1 flex flex-col justify-end px-5 sm:px-8 md:px-10 pt-28 md:pt-40 pb-14 sm:pb-20">
           <div className="max-w-[820px]">
             {/* PLACEHOLDER: eyebrow, H1, and subhead */}

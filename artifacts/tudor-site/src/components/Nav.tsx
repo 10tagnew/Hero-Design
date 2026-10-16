@@ -11,7 +11,12 @@ const NAV_LINKS: NavLink[] = [
   { label: "Articles", href: "/articles" },
   { label: "Membership", href: "#" },
   { label: "Tudor University", href: "https://tudoruniversity.thinkific.com/" },
+  { label: "Admissions", href: "/admissions" },
 ];
+
+// Visible header pill that jumps to the other audience's site. Coaches pages
+// get "Admissions" by default; the Admissions page passes "Coaches".
+const DEFAULT_AUDIENCE_SWITCH: NavLink = { label: "Admissions", href: "/admissions" };
 
 const MENU_LINK_STYLE = {
   fontFamily: "'Bebas Neue', 'Arial Black', sans-serif",
@@ -21,7 +26,10 @@ const MENU_LINK_STYLE = {
   fontWeight: 400,
 } as const;
 
-export function Nav({ links = NAV_LINKS }: { links?: NavLink[] } = {}) {
+export function Nav({
+  links = NAV_LINKS,
+  audienceSwitch = DEFAULT_AUDIENCE_SWITCH,
+}: { links?: NavLink[]; audienceSwitch?: NavLink } = {}) {
   const [open, setOpen] = useState(false);
   const openButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -90,24 +98,33 @@ export function Nav({ links = NAV_LINKS }: { links?: NavLink[] } = {}) {
           />
         </Link>
 
-        <button
-          ref={openButtonRef}
-          type="button"
-          aria-label="Open menu"
-          aria-expanded={open}
-          aria-controls="site-menu"
-          onClick={() => setOpen(true)}
-          className="flex flex-col items-center justify-center gap-[5px] w-11 h-11 shrink-0 rounded-full backdrop-blur-sm"
-          style={{ backgroundColor: "rgba(0,0,0,0.45)" }}
-        >
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              aria-hidden="true"
-              className="block h-[2px] w-6 rounded-full bg-white"
-            />
-          ))}
-        </button>
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <Link
+            href={audienceSwitch.href}
+            className="hidden min-[400px]:inline-flex items-center h-9 px-4 rounded-full border border-white/70 text-white text-xs sm:text-sm font-semibold bg-black/45 backdrop-blur-sm transition-colors hover:bg-white hover:text-gray-900"
+          >
+            {audienceSwitch.label}
+          </Link>
+
+          <button
+            ref={openButtonRef}
+            type="button"
+            aria-label="Open menu"
+            aria-expanded={open}
+            aria-controls="site-menu"
+            onClick={() => setOpen(true)}
+            className="flex flex-col items-center justify-center gap-[5px] w-11 h-11 shrink-0 rounded-full backdrop-blur-sm"
+            style={{ backgroundColor: "rgba(0,0,0,0.45)" }}
+          >
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                aria-hidden="true"
+                className="block h-[2px] w-6 rounded-full bg-white"
+              />
+            ))}
+          </button>
+        </div>
       </header>
 
       {open && (
