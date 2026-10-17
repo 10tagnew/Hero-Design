@@ -1,5 +1,7 @@
 import { Nav } from "@/components/Nav";
 
+const TEXT_SHADOW = "0 2px 24px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.6)";
+
 export function Hero() {
   return (
     <section
@@ -29,6 +31,20 @@ export function Hero() {
         }}
       />
 
+      {/* Extra shade behind the text block so white lettering holds up on light
+          video frames: from the left on desktop, from the bottom on mobile.
+          The right side of the video stays clear. */}
+      <div
+        aria-hidden="true"
+        className="hidden lg:block absolute inset-0 pointer-events-none"
+        style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.25) 45%, transparent 70%)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="lg:hidden absolute inset-x-0 bottom-0 h-[75%] pointer-events-none"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.25) 55%, transparent)" }}
+      />
+
       <Nav />
 
       {/* Hero content */}
@@ -42,6 +58,7 @@ export function Hero() {
               lineHeight: 0.87,
               letterSpacing: "0.01em",
               fontWeight: 400,
+              textShadow: TEXT_SHADOW,
             }}
           >
             <span className="block text-white">OUT</span>
@@ -52,7 +69,7 @@ export function Hero() {
           {/* Subtext */}
           <p
             className="leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base"
-            style={{ color: "#d3dae8", maxWidth: 460, lineHeight: 1.65 }}
+            style={{ color: "#d3dae8", maxWidth: 460, lineHeight: 1.65, textShadow: TEXT_SHADOW }}
           >
             Coaches work with us for one reason: land their dream recruiting classes year after year. It's possible through our coaching, our recruit messaging, and our recruiting websites.
           </p>
