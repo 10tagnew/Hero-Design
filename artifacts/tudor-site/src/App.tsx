@@ -12,6 +12,7 @@ import Admissions from '@/pages/Admissions';
 import TotalRecruitingSolution from '@/pages/TotalRecruitingSolution';
 import OnSiteCampusWorkshops from '@/pages/OnSiteCampusWorkshops';
 import Articles from '@/pages/Articles';
+import Contact from '@/pages/Contact';
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/total-recruiting-solution" component={TotalRecruitingSolution} />
       <Route path="/on-site-campus-workshops" component={OnSiteCampusWorkshops} />
       <Route path="/articles" component={Articles} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );

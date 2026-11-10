@@ -12,6 +12,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Membership", href: "#" },
   { label: "Tudor University", href: "https://tudoruniversity.thinkific.com/" },
   { label: "Admissions", href: "/admissions" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // Visible header pill that jumps to the other audience's site. Coaches pages
