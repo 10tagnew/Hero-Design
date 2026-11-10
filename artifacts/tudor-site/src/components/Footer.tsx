@@ -1,3 +1,11 @@
+import { Link } from "wouter";
+
+// Footer links that have a real destination so far; the rest stay "#" until
+// their pages exist.
+const LINK_HREFS: Record<string, string> = {
+  "Contact Us": "/contact",
+};
+
 const COLUMNS = [
   {
     heading: "Coaching",
@@ -44,13 +52,22 @@ export function Footer() {
                 {col.heading}
               </p>
               <ul className="space-y-3">
-                {col.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm transition-colors" style={{ color: "#6b7a9a" }}>
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const href = LINK_HREFS[link];
+                  return (
+                    <li key={link}>
+                      {href ? (
+                        <Link href={href} className="text-sm transition-colors" style={{ color: "#6b7a9a" }}>
+                          {link}
+                        </Link>
+                      ) : (
+                        <a href="#" className="text-sm transition-colors" style={{ color: "#6b7a9a" }}>
+                          {link}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

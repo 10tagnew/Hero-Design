@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SubstackForm } from "@/components/SubstackForm";
@@ -217,13 +218,13 @@ export default function OnSiteCampusWorkshops() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 shrink-0">
-            <a
-              href="#"
+            <Link
+              href="/contact#workshop"
               className="flex items-center gap-2 px-7 py-4 font-bold text-white text-sm rounded-full transition-opacity hover:opacity-90 whitespace-nowrap"
               style={{ backgroundColor: "#e07b2a" }}
             >
               Book A Workshop »
-            </a>
+            </Link>
             <SubstackForm
               formClassName="flex flex-col sm:flex-row gap-2"
               placeholder="Your email address"
